@@ -1,0 +1,57 @@
+nav{
+  display: flex;
+  height: 75px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $dark;
+  .nav-logo{
+    position: relative;
+    margin: 0 auto;
+    left: 300;
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $grey;
+    font-family: $cursive-type;
+    font-size: 25px;
+    a{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: inherit;
+    }
+      &:hover{
+        background-color: $white;
+        color: $green;
+      }
+    }
+  .nav-opts{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    height: 100%;
+    color: $grey;
+    font-family: $bold-type;
+    font-size: 18px;
+    font-weight: 600;
+    a{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 50%;
+      &:hover{
+        background-color: $white;
+        color: $green;
+      }
+    }
+  }
+  .active{
+    background-color: $white;
+    color: $green;
+  }
+}
