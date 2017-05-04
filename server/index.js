@@ -15,9 +15,10 @@ const express = require('express'),
   app.use(cors());
 
 
-  app.get('/portfolio', mainCtrl.index);
+  app.get('/portfolio', mainCtrl.profile);
+  app.get('/title/:name', mainCtrl.getTitle);
 
-
+ 
 
 
   app.listen(port, function(){
