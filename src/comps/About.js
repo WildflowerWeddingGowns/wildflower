@@ -4,10 +4,12 @@ import {api} from '../utils/api';
 function SelectAbout(props){
   var titles= ['Who', 'Why', 'Bee Happy'];
   return(
-    <ul>
+    <ul className='about-options'>
       {titles.map(function(title){
         return(
           <li
+            className='option'
+            key={title}
             onClick={props.action.bind(null, title)}>
             {title}
           </li>
@@ -44,7 +46,7 @@ export default class About extends Component{
 
   render(){
     return(
-      <div>
+      <div className='about-container'>
         <SelectAbout
         text={this.state.text}
         action={this.updateAbout}
