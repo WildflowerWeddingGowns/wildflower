@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 module.exports={
-  fetchInspiration=(style)=>{
-    axios.get(`api/`)
+  fetchInspiration:(style)=>{
+    return axios.get(`http://localhost:3001/api/inspiration/${style}+wedding+dress`).then((r)=>r)
   }
 }

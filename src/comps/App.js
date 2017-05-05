@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import '../index.css'
 import Nav from "./Nav"
+import Home from './Home'
 import Inspiration from "./Inspiration"
 import Order from "./Order"
 
@@ -16,7 +17,7 @@ export default class App extends Component{
         <div className="container">
           <Nav />
           <Switch>
-            <Route exact path="/"/>
+            <Route exact path="/" component={Home}/>
             <Route path="/inspiration" component={Inspiration}/>
             <Route path="/order" component={Order}/>
             <Route path="/planning" />

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.16.1",
     "body-parser": "^1.17.1",
     "cors": "^2.8.3",
     "express": "^4.15.2",
@@ -10,16 +11,19 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1",
-    "react-router-dom": "^4.1.1"
+    "react-router-dom": "^4.1.1",
+    "sass": "^0.5.0"
   },
   "devDependencies": {
+    "concurrently": "^3.4.0",
     "react-scripts": "0.9.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "sass":"sass --watch src/styles/index.scss:src/index.css",
+    "start": "concurrently \"react-scripts start\" \"yarn server\"",
+    "sass": "sass --watch src/styles/index.scss:src/index.css",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon server"
   }
 }
