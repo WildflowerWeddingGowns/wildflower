@@ -1,0 +1,31 @@
+.order-container{
+  display: flex;
+  background-color: $screen;
+  height: 100vh;
+  width: 100vw;
+  font-family: $cursive-type;
+  color: $green;
+  .contact-info{
+    display: flex;
+    flex-direction: column;
+    margin: 5% 0 0 5%;
+    span{
+      margin-top: 5px;
+      font-size: 30px;
+    }
+    input{
+      box-sizing: border-box;
+      border-radius: 3px;
+      border: none;
+      background-color: $screen;
+      border-bottom: 1px solid $dark-purple;
+      height: 30px;
+      width: 500px;
+      font-size: 15px;
+      &:focus{
+        border-bottom: 3px solid $dark-purple;
+        outline: none;
+      }
+    }
+  }
+}
