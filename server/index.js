@@ -3,12 +3,13 @@ const express = require('express'),
   bodyParser = require('body-parser'),
   massive = require('massive'),
   config = require('./.config.js'),
-  port = 3000,
+  port = 3001,
   axios = require('axios'),
   mainCtrl = require('./controller/dBCtrl'),
   googleAPI = require('./controller/googleAPI');
 
   var app = express();
+  // app.use(express.static('./build'))
 
   app.use(bodyParser.json());
   app.use(cors());

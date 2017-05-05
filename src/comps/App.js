@@ -9,6 +9,8 @@ import Nav from "./Nav"
 // import Inspiration from "./Inspiration"
 import Order from "./Order"
 import Home from './Home'
+import Inspiration from "./Inspiration"
+import Order from "./Order"
 
 
 export default class App extends Component{
@@ -18,8 +20,8 @@ export default class App extends Component{
         <div className="container">
           <Nav />
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/inspiration"/>
+            <Route exact path="/" component={Home}/>
+            <Route path="/inspiration" component={Inspiration}/>
             <Route path="/order" component={Order}/>
             <Route path="/planning" />
           </Switch>
