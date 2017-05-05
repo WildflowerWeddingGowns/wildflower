@@ -8,6 +8,8 @@ import '../index.css'
 import Nav from "./Nav"
 // import Inspiration from "./Inspiration"
 import Order from "./Order"
+import Home from './Home'
+
 
 export default class App extends Component{
   render(){
@@ -16,7 +18,7 @@ export default class App extends Component{
         <div className="container">
           <Nav />
           <Switch>
-            <Route exact path="/"/>
+            <Route exact path="/" component={Home} />
             <Route path="/inspiration"/>
             <Route path="/order" component={Order}/>
             <Route path="/planning" />
