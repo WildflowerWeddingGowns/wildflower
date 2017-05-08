@@ -47,8 +47,12 @@ module.exports = {
       })
     }
 
+  },
+
+  getIcons: function(req, res, next){
+    db.run("select * from photos where location = 'Icons'", function(err, result){
+      res.send(result);
+    })
   }
-
-
 
 }

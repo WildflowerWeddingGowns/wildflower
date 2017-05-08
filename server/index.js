@@ -5,7 +5,7 @@ const express = require('express'),
   config = require('./.config.js'),
   port = 3001,
   axios = require('axios'),
-  mainCtrl = require('./controller/dBCtrl'),
+  dbCtrl = require('./controller/dBCtrl'),
   googleAPI = require('./controller/googleAPI');
 
   var app = express();
@@ -14,8 +14,9 @@ const express = require('express'),
   app.use(bodyParser.json());
   app.use(cors());
 
-  app.get('/portfolio', mainCtrl.profile);
-  app.get('/title/:name', mainCtrl.getTitle);
+  app.get('/portfolio', dbCtrl.profile);
+  app.get('/title/:name', dbCtrl.getTitle);
+  app.get('/icons', dbCtrl.getIcons); 
   app.get('/api/inspiration/:dressType', googleAPI.googleAPICall);
 
   app.listen(port, function(){
