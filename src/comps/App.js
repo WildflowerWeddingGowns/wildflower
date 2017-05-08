@@ -6,8 +6,6 @@ import {
 } from 'react-router-dom'
 import '../index.css'
 import Nav from "./Nav"
-// import Inspiration from "./Inspiration"
-import Order from "./Order"
 import Home from './Home'
 import Inspiration from "./Inspiration"
 import Order from "./Order"
