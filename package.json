@@ -19,7 +19,7 @@
     "react-scripts": "0.9.5"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"yarn server\"",
+    "start": "concurrently \"react-scripts start\" \"yarn server\" \"yarn sass\"",
     "sass": "sass --watch src/styles/index.scss:src/index.css",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
