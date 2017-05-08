@@ -1,0 +1,16 @@
+.home{
+  background-color: rgba(201,200,217,0.4);
+  width: 60%;
+  height: 100vh;
+  position: fixed;
+  .logo-container{
+    margin: 5% auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      height: auto;
+      width: 50%;
+    }
+  }
+}
