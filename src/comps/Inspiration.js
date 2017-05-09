@@ -2,7 +2,14 @@ import React, {Component} from 'react'
 import api from '../utils/api.js'
 
 const DressTypes=(props)=>{
-  const styles=[{name: 'Ballgown'},{name: 'Mermaid'},{name: 'A-Line'},{name: 'Empire'},{name: 'Sheath'},{name: 'Short'}]
+  const styles=[
+    {name: 'Ballgown', icon: '../images/Dress5.svg'},
+    {name: 'Mermaid', icon: '../images/Dress6.svg'},
+    {name: 'A-Line', icon: '../images/Dress7.svg'},
+    {name: 'Empire', icon: '../images/Dress.svg'},
+    {name: 'Sheath', icon: '../images/Dress3.svg'},
+    {name: 'Short', icon: '../images/Dress.svg'}
+  ]
 
   return(
     <div className="dress-types">
@@ -15,6 +22,7 @@ const DressTypes=(props)=>{
             id={style.name}
             className="thumb">
             {style.name}
+            <img src={style.icon} alt=""/>
           </li>
         )
 
