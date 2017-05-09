@@ -16,8 +16,11 @@ const express = require('express'),
 
   app.get('/portfolio', dbCtrl.profile);
   app.get('/title/:name', dbCtrl.getTitle);
-  app.get('/icons', dbCtrl.getIcons); 
+  app.get('/icons', dbCtrl.getIcons);
+  app.get('/chart', dbCtrl.getChart);
   app.get('/api/inspiration/:dressType', googleAPI.googleAPICall);
+
+  app.post('/test/1', dbCtrl.submitOrder);
 
   app.listen(port, function(){
     console.log("App working on port " + port + " me lord.")
