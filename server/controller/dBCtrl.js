@@ -1,5 +1,5 @@
 const massive = require('massive'),
-  config = require('../config.js');
+  config = require('../.config.js');
 
 var db = massive.connectSync({
   connectionString: `postgress://${config.NAME}:${config.PASSWORD}@${config.ENDPOINT}:5432/${config.DBPORT}`
@@ -8,7 +8,7 @@ var db = massive.connectSync({
 
 
 module.exports = {
- 
+
 
   profile: function(req, res, next){
     db.run("select * from photos where location = 'Portfolio'", function(err, result){
@@ -47,8 +47,12 @@ module.exports = {
       })
     }
 
+  },
+
+  getIcons: function(req, res, next){
+    db.run("select * from photos where location = 'Icons'", function(err, result){
+      res.send(result);
+    })
   }
-
-
 
 }

@@ -1,0 +1,34 @@
+.inspiration-container{
+  background-color: $screen-grey;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  font-family: $cursive-type;
+  font-size: 60px;
+  color: $dark-purple;
+  .dress-types{
+    ul{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      margin: 50px auto;
+      li{
+        margin: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+  .pictures{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    justify-content: center;
+    .inspiration{
+      margin: 20px;
+    }
+  }
+}

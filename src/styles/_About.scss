@@ -1,0 +1,44 @@
+.about-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  .about-options {
+    display: flex;
+    background-color: $dark;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    height: 60px;
+    color: $grey;
+    font-family: $bold-type;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 3px;
+    margin-top: 3%;
+    .option{
+      box-sizing: border-box;
+      border-radius: 3px;
+      height: 75%;
+      width: 31%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      &:hover{
+        border: 3px solid $green;
+        font-family: $cursive-type;
+        font-size: 20px;
+      }
+    }
+  }
+  .about{
+    margin: 3% auto 0 auto;
+    width: 85%;
+    height: 350px;
+    text-align: center;
+    font-family: $bold-type;
+    font-size: 25px;
+    font-weight: 200;
+  }
+}

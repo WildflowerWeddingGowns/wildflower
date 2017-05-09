@@ -58,6 +58,7 @@ export default class Inspiration extends Component{
 
   getInspired(style){
       api.fetchInspiration(style).then((r)=>{
+        console.log(r)
         this.setState({
           inspiration:r
         });

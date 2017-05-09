@@ -1,11 +1,27 @@
 .order-container{
   display: flex;
-  background-color: $screen;
+  position: fixed;
+  background-color: $screen-grey;
   height: 100vh;
   width: 100vw;
   font-family: $cursive-type;
   color: $green;
+  .text-container{
+    border-radius: 4px;
+    width: 50%;
+    height: 50%;
+    background-color: $screen-green;
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .text{
+      color:$grey;
+    }
+  }
   .contact-info{
+    width: 50%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     margin: 5% 0 0 5%;
@@ -17,10 +33,10 @@
       box-sizing: border-box;
       border-radius: 3px;
       border: none;
-      background-color: $screen;
+      background-color: $screen-grey;
       border-bottom: 1px solid $dark-purple;
       height: 30px;
-      width: 500px;
+      width: 100%;
       font-size: 15px;
       &:focus{
         border-bottom: 3px solid $dark-purple;

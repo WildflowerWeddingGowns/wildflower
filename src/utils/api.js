@@ -1,7 +1,12 @@
 import axios from 'axios'
 
 module.exports={
-  fetchInspiration=(style)=>{
-    axios.get(`api/`)
+  fetchInspiration:(style)=>{
+    return axios.get(`http://localhost:3001/api/inspiration/${style}+wedding+dress`).then((r)=>r.data)
+  },
+
+  fetchText:(title)=>{
+    if (title==='Bee Happy') title='Bees'
+    return axios.get(`http://localhost:3001/title/${title}`).then((r)=>r.data[0].texts)
   }
 }
