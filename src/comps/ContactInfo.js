@@ -51,7 +51,7 @@ export default class ContactInfo extends Component{
           id="email"
           autoComplete="off"
           />
-        <span className="label">Phone</span>
+        <span className="label">Phone:</span>
         <input
           value={this.state.phone}
           onChange={this.handleChange}

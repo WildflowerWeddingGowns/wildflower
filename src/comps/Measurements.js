@@ -14,25 +14,23 @@ export default class Measurements extends Component{
     api.fetchMeasures().then((r)=>{
       this.setState({
         measures:r
-      });
+      })
     })
   }
 
   render(){
     return (
       <ul className="measure-container">
-        {this.state.measures.map((measure)=>(
+        {this.state.measures.map((measure,i)=>(
           <li
-            key={measure}
+            key={i}
+            className="measure"
             >
-
-            {measure}
-
+            {measure.name}
             <input
+              id={measure.name}
               type="text"
-              id={measure}
               />
-
           </li>
         ))}
       </ul>
