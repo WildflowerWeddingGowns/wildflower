@@ -65,14 +65,17 @@ export default class Inspiration extends Component{
     }
   render(){
     return(
-      <div className="inspiration-container">
-        {!this.state.inspiration ?
-          <DressTypes
-            action={this.getInspired}/>:
-          <PhotosGrid
-            inspiration={this.state.inspiration}/>
-        }
+      <div className="main">
+        <div className="background"></div>
+        <div className="inspiration-container">
+          {!this.state.inspiration ?
+            <DressTypes
+              action={this.getInspired}/>:
+            <PhotosGrid
+              inspiration={this.state.inspiration}/>
+          }
 
+        </div>
       </div>
     )
   }
