@@ -35,13 +35,13 @@ export default class Order extends Component{
     return(
       <div className="main">
         <div className="background"></div>
-        <div className="order-container">
+        <form className="order-container">
           <ContactInfo
             action={this.handleSubmit}
             />
           <Attention />
           <Measurements />
-        </div>
+        </form>
       </div>
     )
   }

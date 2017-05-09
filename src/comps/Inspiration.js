@@ -17,7 +17,6 @@ const DressTypes=(props)=>{
             {style.name}
           </li>
         )
-
       })}
       </ul>
     </div>
