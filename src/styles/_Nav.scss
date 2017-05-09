@@ -50,6 +50,15 @@ nav{
       }
     }
   }
+  .tooltip{
+    position: absolute;
+    top: 80px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $bold-type;
+  }
   .active{
     background-color: $white;
     color: $green;
