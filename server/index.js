@@ -14,7 +14,7 @@ const express = require('express'),
   app.use(bodyParser.json());
   app.use(cors());
 
-  app.get('/portfolio', dbCtrl.profile);
+  app.get('/portfolio', dbCtrl.portfolio);
   app.get('/title/:name', dbCtrl.getTitle);
   app.get('/icons', dbCtrl.getIcons);
   app.get('/chart', dbCtrl.getChart);

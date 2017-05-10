@@ -1,7 +1,29 @@
-import React, {Component} from 'react';
-import Slider from 'react-slick';
+import React, {Component} from 'react'
+import Slider from 'react-slick'
+import api from '../utils/api'
+
 
 export default class PortfolioSlider extends Component{
+  constructor(props){
+    super(props)
+
+    this.state={
+      photos: ["https://s3-us-west-2.amazonaws.com/wildflower-picks/Portfolio/port1.jpg"]
+    }
+  }
+
+  componentWillMount(){
+    let urls=[]
+    api.fetchPortfolio().then((r)=>{
+      r.map((obj)=>{
+        urls.push(obj.url)
+      })
+      this.setState({
+        photos: urls
+      })
+      console.log(this.state.photos)
+    })
+  }
     render() {
       var settings = {
       dots: true,
@@ -15,13 +37,12 @@ export default class PortfolioSlider extends Component{
     };
 
         return (
-            <div className='slick'>               
+            <div className='slick'>
                 <Slider {...settings}>
-                    <div><img src='https://static1.squarespace.com/static/53fc024de4b0ad5cecf5c9f1/5834bff7b8a79b68e660af9b/5834c040c534a52c8541b736/1479852101174/AlixannLoosle49.jpg?format=1000w' alt='' /></div>
-                    <div><img src='https://static1.squarespace.com/static/53fc024de4b0ad5cecf5c9f1/5834bff7b8a79b68e660af9b/5834c041414fb5a615eb31fc/1479852100051/AlixannLoosle50.jpg?format=1000w' alt='' /></div>
-                    <div><img src='https://static1.squarespace.com/static/53fc024de4b0ad5cecf5c9f1/5834bff7b8a79b68e660af9b/5834c04a414fb5a615eb32dc/1479852109104/AlixannLoosle56.jpg?format=1000w' alt='' /></div>
-                    <div><img src='https://static1.squarespace.com/static/53fc024de4b0ad5cecf5c9f1/5834bff7b8a79b68e660af9b/5834c04f414fb5a615eb3348/1479852113605/AlixannLoosle59.jpg?format=1000w' alt='' /></div>
-                    <div><img src='https://static1.squarespace.com/static/53fc024de4b0ad5cecf5c9f1/5834bff7b8a79b68e660af9b/5834c05520099ed326e12115/1479852120097/AlixannLoosle64.jpg?format=1000w' alt='' /></div>
+                  {this.state.photos.length &&
+                  this.state.photos.map((p,i)=>(<div key={i}>
+                    <img src={p} alt=""/>
+                  </div>))}
                 </Slider>
             </div>
 

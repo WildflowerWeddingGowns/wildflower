@@ -10,8 +10,8 @@ var db = massive.connectSync({
 module.exports = {
 
 
-  profile: function(req, res, next){
-    db.get_all_profile(function(err, result){
+  portfolio: function(req, res, next){
+    db.get_all_portfolio(function(err, result){
       res.send(result);
     })
   },
