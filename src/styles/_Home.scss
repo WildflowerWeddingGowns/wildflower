@@ -1,4 +1,5 @@
 .main{
+  z-index: -1;
   box-sizing: border-box;
   position: absolute;
   top: 0;
@@ -45,6 +46,12 @@
       height: 100%;
       .slick-list{
         border-left: 1px solid $dark-purple;
+        div{
+          img{
+            height: auto;
+            width: 100%;
+          }
+        }
       }
     }
   }

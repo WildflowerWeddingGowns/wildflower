@@ -12,5 +12,9 @@ module.exports={
 
   fetchMeasures:()=>{
     return axios.get(`http://localhost:3001/chart`).then((r)=>r.data)
+  },
+
+  fetchPortfolio:()=>{
+    return axios.get(`http://localhost:3001/portfolio`).then((r)=>r.data)
   }
 }
