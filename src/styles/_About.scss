@@ -33,6 +33,7 @@
     }
   }
   .about{
+    line-height: 1.2;
     margin: 3% auto 0 auto;
     width: 85%;
     height: 350px;
@@ -40,5 +41,6 @@
     font-family: $bold-type;
     font-size: 25px;
     font-weight: 200;
+    color: $dark;
   }
 }

@@ -22,7 +22,7 @@ const DressTypes=(props)=>{
             id={style.name}
             className="thumb">
             {style.name}
-            <img src={style.icon} alt=""/>
+            <img src="../images/Dress5.svg" alt=""/>
           </li>
         )
       })}
