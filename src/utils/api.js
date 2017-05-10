@@ -8,5 +8,9 @@ module.exports={
   fetchText:(title)=>{
     if (title==='Bee Happy') title='Bees'
     return axios.get(`http://localhost:3001/title/${title}`).then((r)=>r.data[0].texts)
+  },
+
+  fetchMeasures:()=>{
+    return axios.get(`http://localhost:3001/chart`).then((r)=>r.data)
   }
 }

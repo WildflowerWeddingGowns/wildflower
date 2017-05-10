@@ -25,7 +25,6 @@ const DressTypes=(props)=>{
             <img src={style.icon} alt=""/>
           </li>
         )
-
       })}
       </ul>
     </div>

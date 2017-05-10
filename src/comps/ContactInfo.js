@@ -24,9 +24,8 @@ export default class ContactInfo extends Component{
   }
   render(){
     return(
-      <form
+      <div
         className="contact-info"
-        onSubmit={this.props.action}
         >
         <span className="label">First Name:</span>
         <input
@@ -52,7 +51,7 @@ export default class ContactInfo extends Component{
           id="email"
           autoComplete="off"
           />
-        <span className="label">Phone</span>
+        <span className="label">Phone:</span>
         <input
           value={this.state.phone}
           onChange={this.handleChange}
@@ -60,7 +59,7 @@ export default class ContactInfo extends Component{
           id="phone"
           autoComplete="off"
           />
-      </form>
+      </div>
     )
   }
 }
