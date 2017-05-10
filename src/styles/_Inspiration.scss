@@ -1,5 +1,5 @@
 .inspiration-container{
-  background-color: $screen;
+  background-color: $screen-grey;
   height: 100vh;
   width: 100%;
   position: fixed;
@@ -11,10 +11,10 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       height: 100%;
-      width: 100%;
+      width: 75%;
       margin: 50px auto;
       li{
         margin: 20px;

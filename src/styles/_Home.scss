@@ -1,16 +1,28 @@
-.home{
-  background-color: rgba(201,200,217,0.4);
-  width: 60%;
-  height: 100vh;
-  position: fixed;
-  .logo-container{
-    margin: 5% auto 0 auto;
+.main{
+  height: 100%;
+  width: 100%;
+
+  .background{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    img{
-      height: auto;
-      width: 50%;
+    height: 100%;
+    width: 100%;
+    background-image: url('../src/images/background1.jpg');
+  }
+
+  .left{
+    width: 60%;
+    height: 100%;
+    border-right: 1px solid $dark-purple;
+    .logo-container{
+      z-index: 99;
+      margin: 5% auto 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img{
+        height: auto;
+        width: 50%;
+      }
     }
   }
 }

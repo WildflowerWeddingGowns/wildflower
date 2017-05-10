@@ -4,7 +4,6 @@
   flex-direction: column;
   width: 100%;
   .about-options {
-    z-index: 999;
     display: flex;
     background-color: $dark;
     justify-content: space-around;
@@ -16,6 +15,7 @@
     font-size: 14px;
     font-weight: 600;
     border-radius: 3px;
+    margin-top: 3%;
     .option{
       box-sizing: border-box;
       border-radius: 3px;
@@ -28,13 +28,14 @@
       &:hover{
         border: 3px solid $green;
         font-family: $cursive-type;
-        font-size: 35px;
+        font-size: 20px;
       }
     }
   }
   .about{
     margin: 3% auto 0 auto;
     width: 85%;
+    height: 350px;
     text-align: center;
     font-family: $bold-type;
     font-size: 25px;
