@@ -46,9 +46,9 @@ export default class Order extends Component{
   }
   render(){
     return(
-      <div className="main">
+      <div className="order-container">
         <div className="background"></div>
-        <form className="order-container">
+        <form className="order">
           <div className="top">
             <ContactInfo
               action={this.handleSubmit}

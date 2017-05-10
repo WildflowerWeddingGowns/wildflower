@@ -21,7 +21,6 @@ export default class PortfolioSlider extends Component{
       this.setState({
         photos: urls
       })
-      console.log(this.state.photos)
     })
   }
     render() {
