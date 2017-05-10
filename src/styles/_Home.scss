@@ -1,8 +1,13 @@
 .main{
-  height: 90.5%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  padding-top: 75px;
   width: 100%;
   display: flex;
   .left{
+
     background-color: $screen-grey;
     .background{
       display: flex;
@@ -19,7 +24,6 @@
     width: 60%;
     height: 100%;
     .logo-container{
-      z-index: 99;
       margin: 5% auto 0 auto;
       display: flex;
       justify-content: center;
