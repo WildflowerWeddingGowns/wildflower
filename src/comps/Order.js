@@ -55,20 +55,25 @@ const Attention=(props)=>(
 //===Measurements Table===\\
 const Measurements=(props)=>(
   <ul className="measure-container">
-    {props.measures.map((measure,i)=>(
-      <li
-        key={i}
-        className="measure"
-        >
-        {measure.name}
-        <input
-          id={measure.name}
-          type="text"
-          value={props[measure.name]}
-          onChange={props.action.bind(null,this)}
-          />
-      </li>
-    ))}
+    {props.measures.map((measure,i)=>{
+      let name
+      let names=measure.name.split('_')
+      name=names.map((x)=>x+' ').join(' ')
+      return(
+        <li
+          key={i}
+          className="measure"
+          >
+          {name}
+          <input
+            id={measure.name}
+            type="text"
+            value={props[measure.name]}
+            onChange={props.action}
+            />
+        </li>
+      )
+    })}
   </ul>
 )
 
@@ -77,8 +82,6 @@ export default class Order extends Component{
   constructor(props){
     super(props)
     this.state={
-      text: '',
-      measures: [],
       firstName: '',
       lastName: '',
       email: '',
@@ -98,11 +101,11 @@ export default class Order extends Component{
       Bicep:'',
       Neck:'',
       Waist:'',
-      photos: []
+      photos: [],
+      text: '',
+      measures: []
     }
-    this.handleSubmit=this.handleSubmit.bind(this)
-    this.updateContactInfo=this.updateContactInfo.bind(this)
-    this.updateMeasurements=this.updateMeasurements.bind(this)
+    this.updateState=this.updateState.bind(this)
     this.submitOrder=this.submitOrder.bind(this)
   }
 
@@ -119,10 +122,6 @@ export default class Order extends Component{
     })
   }
 
-  handleSubmit(){
-    console.log('test')
-  }
-
   updateState(event){
     let target=event.target
     this.setState(()=>{
@@ -130,12 +129,11 @@ export default class Order extends Component{
       newState[target.id]=target.value
       return newState
     })
-
   }
 
   submitOrder(event){
     event.preventDefault()
-    console.log(this.state)
+    api.submitOrder(this.state)
   }
   render(){
     return(

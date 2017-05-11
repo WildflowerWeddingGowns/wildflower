@@ -15,11 +15,12 @@ const DressTypes=(props)=>{
   return(
     <div className="dress-types">
       <ul>
-        {styles.map((style,i)=>(
-          <li key={i}>
-            {style.name}
-          </li>
-        ))}
+        {styles.map((style,i)=>
+            <li key={i}>
+              {style.name}
+            </li>
+            )
+          }
       </ul>
     </div>
   )
