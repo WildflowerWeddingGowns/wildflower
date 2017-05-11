@@ -1,13 +1,15 @@
 //===GLOBAL===\\
-@import 'reset';
 @import 'variables';
+@import 'reset';
+
 
 //===APP===\\
-@import 'App';
+
 @import 'Nav';
 
 @import 'Home';
 @import 'About';
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
 @import 'Inspiration';
 @import 'Order';
-

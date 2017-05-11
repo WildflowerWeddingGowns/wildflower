@@ -30,11 +30,12 @@ export default class About extends Component{
   }
 
   updateAbout(title){
-    
+
     this.setState({
       title:title
     })
-    api.fetchAbout(title).then((text)=>{
+
+    api.fetchText(title).then((text)=>{
       console.log(text)
       this.setState({
         text:text

@@ -1,24 +1,25 @@
 import React, {Component} from 'react'
 import api from '../utils/api.js'
+import Dress1 from '../images/Dress1.svg'
 
 const DressTypes=(props)=>{
-  const styles=[{name: 'Ballgown'},{name: 'Mermaid'},{name: 'A-Line'},{name: 'Empire'},{name: 'Sheath'},{name: 'Short'}]
+  const styles=[
+    {name: 'Ballgown', icon: '../images/Dress5.svg'},
+    {name: 'Mermaid', icon: '../images/Dress6.svg'},
+    {name: 'A-Line', icon: '../images/Dress7.svg'},
+    {name: 'Empire', icon: '../images/Dress.svg'},
+    {name: 'Sheath', icon: '../images/Dress3.svg'},
+    {name: 'Short', icon: '../images/Dress.svg'}
+  ]
 
   return(
     <div className="dress-types">
       <ul>
-      {styles.map((style)=>{
-        return(
-          <li
-            onClick={props.action.bind(null,style.name)}
-            key={style.name}
-            id={style.name}
-            className="thumb">
+        {styles.map((style,i)=>(
+          <li key={i}>
             {style.name}
           </li>
-        )
-
-      })}
+        ))}
       </ul>
     </div>
   )
@@ -31,7 +32,7 @@ const PhotosGrid=(props)=>{
         return(
           <div
             key={i}
-            className="inspiration">
+            className="pic">
             <a target="_blank" href={pic.link}>
               <img
                 src={pic.image.thumbnailLink} alt=""/>
@@ -58,21 +59,25 @@ export default class Inspiration extends Component{
 
   getInspired(style){
       api.fetchInspiration(style).then((r)=>{
+        console.log(r)
         this.setState({
-          inspiration:r.data
+          inspiration:r
         });
       })
     }
   render(){
     return(
       <div className="inspiration-container">
-        {!this.state.inspiration ?
-          <DressTypes
-            action={this.getInspired}/>:
-          <PhotosGrid
-            inspiration={this.state.inspiration}/>
-        }
+        <div className="background"></div>
+        <div className="inspiration">
+          {!this.state.inspiration ?
+            <DressTypes
+              action={this.getInspired}/>:
+            <PhotosGrid
+              inspiration={this.state.inspiration}/>
+          }
 
+        </div>
       </div>
     )
   }
