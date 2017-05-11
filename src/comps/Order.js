@@ -8,18 +8,18 @@ const ContactInfo=(props)=>(
     >
     <span className="label">First Name:</span>
     <input
-      value={props.firstName}
+      value={props.first_name}
       onChange={props.action}
       type="text"
-      id="firstName"
+      id="first_name"
       autoComplete="off"
       />
     <span className="label">(Current!) Last Name:</span>
     <input
-      value={props.lastName}
+      value={props.last_name}
       onChange={props.action}
       type="text"
-      id="lastName"
+      id="last_name"
       autoComplete="off"
       />
     <span className="label">Email:</span>
@@ -82,8 +82,8 @@ export default class Order extends Component{
   constructor(props){
     super(props)
     this.state={
-      firstName: '',
-      lastName: '',
+      first_name: '',
+      last_name: '',
       email: '',
       phone: '',
       Full_Bust:'',
@@ -101,7 +101,7 @@ export default class Order extends Component{
       Bicep:'',
       Neck:'',
       Waist:'',
-      photos: [],
+      Photos: [],
       text: '',
       measures: []
     }
@@ -133,6 +133,10 @@ export default class Order extends Component{
 
   submitOrder(event){
     event.preventDefault()
+    !this.state.Photos &&
+    this.setState({
+      Photos: ['no photos']
+    });
     api.submitOrder(this.state)
   }
   render(){
@@ -155,10 +159,11 @@ export default class Order extends Component{
               action={this.updateState}
               info={this.state}/>
             <button
+              className='submit'
               type="submit"
               onClick={this.submitOrder}
               >
-              Submit
+              SUBMIT
             </button>
           </div>
         </form>
