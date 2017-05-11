@@ -1,4 +1,4 @@
-insert into measures_test (chart_id, value, user_id)
+insert into measures (chart_id, value, user_id)
 values
 (19, $1, $17),
 (20, $2, $17),
