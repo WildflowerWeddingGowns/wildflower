@@ -16,5 +16,9 @@ module.exports={
 
   fetchPortfolio:()=>{
     return axios.get(`http://localhost:3001/portfolio`).then((r)=>r.data)
+  },
+
+  submitOrder:(order)=>{
+    return axios.post(`http://localhost:3001/order`,order)
   }
 }
