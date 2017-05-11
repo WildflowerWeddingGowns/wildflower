@@ -63,64 +63,64 @@ module.exports = {
 
 
   submitOrder: function(req, res, next){
-  var test = req.body;
-  db.post_to_user(
-    [
-    test.first_name,
-    test.last_name,
-    test.phone,
-    test.email
-  ],
-function(err, result){
-  console.log(test.test1);
-  console.log(result);
-  console.log(err);
-  var userID = result[0].user_id;
-
-    db.post_to_measures(
+    var test = req.body;
+    db.post_to_user(
       [
-        test.Full_Bust,
-        test.Upper_Bust,
-        test.Under_Bust,
-        test.Nipple_to_Nipple,
-        test.Shoulder_to_Bust,
-        test.Shoulder_to_Waist,
-        test.Shoulder_to_Shoulder,
-        test.Outer_leg,
-        test.Armseye,
-        test.Arm_Length,
-        test.Upper_Arm_Length,
-        test.Armpit_to_Elbow,
-        test.Bicep,
-        test.Neck,
-        test.Waist,
-        test.Hips,
-         userID
+      test.first_name,
+      test.last_name,
+      test.phone,
+      test.email
+    ],
+  function(err, result){
+    console.log(test.test1);
+    console.log(result);
+    console.log(err);
+    var userID = result[0].user_id;
 
-      ],
-      function(err, result){
-        console.log(test.test2);
-        console.log(result);
-        console.log(err);
-        db.post_to_photos(
-          [
-            test.Photo1,
-            test.Photo2,
-            test.Photo3,
-            userID
-          ],
-          function(err, result){
-            console.log(test.test3);
+      db.post_to_measures(
+        [
+          test.Full_Bust,
+          test.Upper_Bust,
+          test.Under_Bust,
+          test.Nipple_to_Nipple,
+          test.Shoulder_to_Bust,
+          test.Shoulder_to_Waist,
+          test.Shoulder_to_Shoulder,
+          test.Outer_leg,
+          test.Armseye,
+          test.Arm_Length,
+          test.Upper_Arm_Length,
+          test.Armpit_to_Elbow,
+          test.Bicep,
+          test.Neck,
+          test.Waist,
+          test.Hips,
+           userID
+
+        ],
+            function(err, result){
+            console.log(test.test2);
             console.log(result);
             console.log(err);
-            res.send(result);
-          }
-        )
-       })
-  })
+              test.Photos.map(function(x){
+              db.post_to_photos(
+                [
+                  x,
+                  userID
+                ],
+                function(err, result){
+                  console.log(test.test3);
+                  console.log(result);
+                  console.log(err);
+                }
+              )
+             })
+         res.send(result);
+         })
+    })
 
 
 
-},
+  },
 
 }
