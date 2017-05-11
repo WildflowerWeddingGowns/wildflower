@@ -159,10 +159,11 @@ export default class Order extends Component{
               action={this.updateState}
               info={this.state}/>
             <button
+              className='submit'
               type="submit"
               onClick={this.submitOrder}
               >
-              Submit
+              SUBMIT
             </button>
           </div>
         </form>
