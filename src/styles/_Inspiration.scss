@@ -1,34 +1,48 @@
 .inspiration-container{
-  background-color: $screen-grey;
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  font-family: $cursive-type;
-  font-size: 60px;
-  color: $dark-purple;
-  .dress-types{
-    ul{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      height: 100%;
-      width: 75%;
-      margin: 50px auto;
-      li{
-        margin: 20px;
-        cursor: pointer;
+  z-index: -1;
+  .background{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    background-image: url('./images/background7.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+  }
+  .inspiration{
+    background-color: $screen-grey;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    font-family: $cursive-type;
+    font-size: 60px;
+    color: $dark-purple;
+    .dress-types{
+      ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 75%;
+        margin: 50px auto;
+        li{
+          margin: 20px;
+          cursor: pointer;
+        }
       }
     }
-  }
-  .pictures{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px;
-    justify-content: center;
-    .inspiration{
-      margin: 20px;
+    .pictures{
+      display: flex;
+      flex-wrap: wrap;
+      margin: 10px;
+      justify-content: center;
+      .pic{
+        margin: 20px;
+      }
     }
   }
 }

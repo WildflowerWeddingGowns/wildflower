@@ -52,6 +52,7 @@ nav{
     }
   }
   .tooltip{
+    z-index: 1;
     position: absolute;
     top: 80px;
     width: 60%;
@@ -59,6 +60,7 @@ nav{
     justify-content: center;
     align-items: center;
     font-family: $bold-type;
+    color: $dark;
   }
   .active{
     background-color: $white;

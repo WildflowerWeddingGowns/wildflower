@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import api from '../utils/api.js'
+import Dress1 from '../images/Dress1.svg'
 
 const DressTypes=(props)=>{
   const styles=[
@@ -14,18 +15,11 @@ const DressTypes=(props)=>{
   return(
     <div className="dress-types">
       <ul>
-      {styles.map((style)=>{
-        return(
-          <li
-            onClick={props.action.bind(null,style.name)}
-            key={style.name}
-            id={style.name}
-            className="thumb">
+        {styles.map((style,i)=>(
+          <li key={i}>
             {style.name}
-            <img src="../images/Dress5.svg" alt=""/>
           </li>
-        )
-      })}
+        ))}
       </ul>
     </div>
   )
@@ -38,7 +32,7 @@ const PhotosGrid=(props)=>{
         return(
           <div
             key={i}
-            className="inspiration">
+            className="pic">
             <a target="_blank" href={pic.link}>
               <img
                 src={pic.image.thumbnailLink} alt=""/>
@@ -73,9 +67,9 @@ export default class Inspiration extends Component{
     }
   render(){
     return(
-      <div className="main">
+      <div className="inspiration-container">
         <div className="background"></div>
-        <div className="inspiration-container">
+        <div className="inspiration">
           {!this.state.inspiration ?
             <DressTypes
               action={this.getInspired}/>:

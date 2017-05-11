@@ -38,21 +38,40 @@ export default class Order extends Component{
       lastName: '',
       email: '',
       phone: '',
+      Full_Bust:'',
+      Upper_Bust: '',
+      Under_Bust: '',
+      Nipple_to_Nipple: '',
+      Shoulder_to_Bust: '',
+      Shoulder_to_Waist: '',
+      Shoulder_to_Shoulder: '',
+      Outer_Leg:'',
+      Armseye: '',
+      Arm_Length:'',
+      Upper_Arm_Length:'',
+      Armpit_to_Elbow:'',
+      Bicep:'',
+      Neck:'',
+      Waist:'',
+      photos: []
     }
     this.handleSubmit=this.handleSubmit.bind(this)
   }
+
   handleSubmit(){
     console.log('test')
   }
+
+  saveMeasurements(){
+    
+  }
   render(){
     return(
-      <div className="main">
+      <div className="order-container">
         <div className="background"></div>
-        <form className="order-container">
+        <form className="order">
           <div className="top">
-            <ContactInfo
-              action={this.handleSubmit}
-              />
+            <ContactInfo />
             <Attention />
           </div>
           <div className="bottom">
