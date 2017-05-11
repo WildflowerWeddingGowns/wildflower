@@ -123,38 +123,11 @@ export default class Order extends Component{
     console.log('test')
   }
 
-  updateContactInfo(event){
+  updateState(event){
     let target=event.target
     this.setState(()=>{
       let newState={}
-      newState.firstName=target.firstName
-      newState.lastName=target.lastName
-      newState.phone=target.phone
-      newState.email=target.email
-      return newState
-    })
-    console.log(this.state)
-    console.log(target)
-  }
-
-  updateMeasurements(event){
-    let target=event.target
-    this.setState(()=>{
-      let newState={}
-      newState.Full_Bust=target.Full_Bust
-      newState.Upper_Bust=target.Upper_Bust
-      newState.Under_Bust=target.Under_Bust
-      newState.Nipple_to_Nipple=target.Nipple_to_Nipple
-      newState.Shoulder_to_Bust=target.Shoulder_to_Bust
-      newState.Shoulder_to_Waist=target.Shoulder_to_Waist
-      newState.Shoulder_to_Shoulder=target.Shoulder_to_Shoulder
-      newState.Outer_Leg=target.Outer_Leg
-      newState.Armseye=target.Armseye
-      newState.Arm_Length=target.Arm_Length
-      newState.Armpit_to_Elbow=target.Armpit_to_Elbow
-      newState.Bicep=target.Bicep
-      newState.Neck=target.Neck
-      newState.Waist=target.Waist
+      newState[target.id]=target.value
       return newState
     })
 
@@ -171,7 +144,7 @@ export default class Order extends Component{
         <form className="order">
           <div className="top">
             <ContactInfo
-              action={this.updateContactInfo}
+              action={this.updateState}
               info={this.state}
               />
             <Attention
@@ -181,7 +154,7 @@ export default class Order extends Component{
           <div className="bottom">
             <Measurements
               measures={this.state.measures}
-              action={this.updateMeasurements}
+              action={this.updateState}
               info={this.state}/>
             <button
               type="submit"
