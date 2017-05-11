@@ -15,11 +15,17 @@ const DressTypes=(props)=>{
   return(
     <div className="dress-types">
       <ul>
-        {styles.map((style,i)=>(
-          <li key={i}>
+         {styles.map((style)=>{
+         return(
+           <li
+             onClick={props.action.bind(null,style.name)}
+             key={style.name}
+             id={style.name}
+             className="thumb">
             {style.name}
           </li>
-        ))}
+         )
+         })}
       </ul>
     </div>
   )
