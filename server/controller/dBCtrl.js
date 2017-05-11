@@ -66,8 +66,8 @@ module.exports = {
     var test = req.body;
     db.post_to_user(
       [
-      test.firstName,
-      test.lastName,
+      test.first_name,
+      test.last_name,
       test.phone,
       test.email
     ],
@@ -79,18 +79,18 @@ module.exports = {
 
       db.post_to_measures(
         [
-          test.FullBust,
-          test.UpperBust,
-          test.UnderBust,
-          test.NippleToNipple,
-          test.ShoulderToBust,
-          test.ShoulderToWaist,
-          test.ShoulderToShoulder,
-          test.Outerleg,
+          test.Full_Bust,
+          test.Upper_Bust,
+          test.Under_Bust,
+          test.Nipple_to_Nipple,
+          test.Shoulder_to_Bust,
+          test.Shoulder_to_Waist,
+          test.Shoulder_to_Shoulder,
+          test.Outer_leg,
           test.Armseye,
-          test.ArmLength,
-          test.UpperArmLength,
-          test.ArmpitToElbow,
+          test.Arm_Length,
+          test.Upper_Arm_Length,
+          test.Armpit_to_Elbow,
           test.Bicep,
           test.Neck,
           test.Waist,
