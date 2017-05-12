@@ -56,7 +56,6 @@ const DressTypes=(props)=>{
       )
     }
 
-
 const PhotosGrid=(props)=>{
   return(
     <div className="pictures">
@@ -116,7 +115,6 @@ export default class Inspiration extends Component{
             <PhotosGrid
               inspiration={this.state.inspiration}
             />
-
             <MoreButton
               name={this.state.style}
               onClick={this.getInspired}
