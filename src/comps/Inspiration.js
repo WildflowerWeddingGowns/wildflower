@@ -22,14 +22,40 @@ const DressTypes=(props)=>{
              key={style.name}
              id={style.name}
              className="thumb">
-            {style.name}
+             {style.name}
           </li>
          )
          })}
       </ul>
-    </div>
+        </div>
   )
 }
+
+    const MoreButton=(props)=>{
+      return(
+        <div>
+          <button
+          className='more-button'
+          onClick={props.onClick.bind(null,props.name)}>
+          View More
+          </button>
+        </div>
+  )
+}
+
+    const BackButton=(props)=>{
+      return(
+        <div>
+          <button
+          className='back-button'
+          onClick={props.onClick}
+          >
+          Back
+          </button>
+        </div>
+      )
+    }
+
 
 const PhotosGrid=(props)=>{
   return(
@@ -45,10 +71,8 @@ const PhotosGrid=(props)=>{
             </a>
           </div>
         )
-
       })}
     </div>
-
   )
 }
 
@@ -61,16 +85,25 @@ export default class Inspiration extends Component{
       inspiration: null,
     }
     this.getInspired=this.getInspired.bind(this)
+    this.goBack=this.goBack.bind(this)
   }
 
   getInspired(style){
       api.fetchInspiration(style).then((r)=>{
         console.log(r)
         this.setState({
+          style: style,
           inspiration:r
         });
       })
     }
+
+    goBack(){
+      this.setState({
+        inspiration:null
+      });
+    }
+
   render(){
     return(
       <div className="inspiration-container">
@@ -79,12 +112,24 @@ export default class Inspiration extends Component{
           {!this.state.inspiration ?
             <DressTypes
               action={this.getInspired}/>:
+            <div className="thingy">
             <PhotosGrid
-              inspiration={this.state.inspiration}/>
-          }
+              inspiration={this.state.inspiration}
+            />
 
+            <MoreButton
+              name={this.state.style}
+              onClick={this.getInspired}
+              style={{display: this.state.style ? 'block' : 'none'}}
+               />
+            <BackButton
+              onClick={this.goBack}
+              style={{display: this.state.style ? 'block' : 'none'}}
+               />
+          </div>
+          }
+          </div>
         </div>
-      </div>
     )
+   }
   }
-}
