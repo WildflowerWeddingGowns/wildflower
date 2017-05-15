@@ -18,4 +18,4 @@ module.exports = {
       start = start + 10
     })
   }
-}
+};
