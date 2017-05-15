@@ -83,6 +83,39 @@
     }
     .bottom{
       text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .upload > input[type='file']{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        border: 0;
+      }
+      .upload{
+        position: absolute;
+        left: 5%;
+        top: 48%;
+        background: $dark;
+        border-radius: 3px;
+        height: 4%;
+        width: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        font-family: $bold-type;
+        font-weight: 600;
+        &:hover{
+          background: $white;
+          color: $green;
+        }
+      }
       .measure-container{
         display: flex;
         flex-wrap: wrap;
@@ -110,11 +143,10 @@
             }
           }
         }
-        .photos{
-          
-        }
       }
       .submit{
+        position: absolute;
+        bottom: 79px;
         margin-top: .3%;
         background-color: $dark;
         border-radius: 3px;

@@ -41,7 +41,6 @@ const ContactInfo=(props)=>(
   </div>
 )
 
-
 //===Info Box===\\
 const Attention=(props)=>(
   <div className="text-container">
@@ -50,7 +49,16 @@ const Attention=(props)=>(
   </div>
 )
 
-
+//===File Input===\\
+const PhotoUpload=(props)=>(
+  <label className="upload">
+    <span>PHOTOS</span>
+    <input
+      onChange={props.action}
+      type="file"
+      />
+  </label>
+)
 
 //===Measurements Table===\\
 const Measurements=(props)=>(
@@ -74,11 +82,6 @@ const Measurements=(props)=>(
         </li>
       )
     })}
-    <input
-      className='photos'
-      type="file"
-      onChange={props.action2}
-      />
   </ul>
 )
 
@@ -184,14 +187,18 @@ export default class Order extends Component{
             <Attention
               text={this.state.text}
               />
+
           </div>
           <div className="bottom">
+            <PhotoUpload
+              action={this.readPhotos}
+              />
             <Measurements
               measures={this.state.measures}
               action={this.updateState}
-              action2={this.readPhotos}
               info={this.state}
               />
+
             <button
               className='submit'
               type="submit"
