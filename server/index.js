@@ -13,9 +13,9 @@ const express = require('express'),
   // app.use(express.static('./build'))
 
   AWS.config.update({
-  accessKeyId: config.aws.ACCESS_KEY,
-  secretAccessKey: config.aws.SECRET_KEY,
-  region: config.aws.REGION
+  accessKeyId: config.ACCESS_KEY,
+  secretAccessKey: config.SECRET_KEY,
+  region: config.REGION
 })
 
 const s3 = new AWS.S3();
