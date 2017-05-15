@@ -74,6 +74,11 @@ const Measurements=(props)=>(
         </li>
       )
     })}
+    <input
+      className='photos'
+      type="file"
+      onChange={props.action2}
+      />
   </ul>
 )
 
@@ -106,6 +111,7 @@ export default class Order extends Component{
       measures: []
     }
     this.updateState=this.updateState.bind(this)
+    this.readPhotos=this.readPhotos.bind(this)
     this.submitOrder=this.submitOrder.bind(this)
   }
 
@@ -129,6 +135,32 @@ export default class Order extends Component{
       newState[target.id]=target.value
       return newState
     })
+  }
+
+  readPhotos(event){
+    event.preventDefault()
+    let reader=new FileReader()
+    let file=event.target.files[0]
+    let photos=this.state.Photos
+    console.log(photos)
+
+    reader.onloadend=(loadEvent)=>{
+      const newPhoto={
+        imageName: file.name.split('.')[0],
+        imageBody: loadEvent.target.result,
+        imageExtension: file.type
+      }
+      console.log(photos)
+      this.setState(()=>{
+        let newState={}
+        newState.Photos=photos
+        newState.Photos.push(newPhoto)
+        return newState
+      })
+
+    }
+    reader.readAsDataURL(file)
+    console.log(this.state)
   }
 
   submitOrder(event){
@@ -157,7 +189,9 @@ export default class Order extends Component{
             <Measurements
               measures={this.state.measures}
               action={this.updateState}
-              info={this.state}/>
+              action2={this.readPhotos}
+              info={this.state}
+              />
             <button
               className='submit'
               type="submit"
